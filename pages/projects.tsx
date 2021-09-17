@@ -1,6 +1,5 @@
 import * as React from "react";
 import { NextPage } from "next";
-import { PageWrapper } from "../components/PageWrapper";
 import { Spacer } from "../components/Spacer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +7,7 @@ import { PageHeader } from "../components/PageHeader";
 
 const ProjectsPage: NextPage = () => {
   return (
-    <PageWrapper>
+    <div>
       <PageHeader
         title="Projects"
         subtitle="A sample of some things I've worked on."
@@ -17,15 +16,19 @@ const ProjectsPage: NextPage = () => {
       <div className="grid gap-6">
         {projects.map((proj) => (
           <div key={proj.title}>
-            <div className="font-bold text-gray-800 text-lg">{proj.title}</div>
-            <div className="text-gray-700">{proj.description}</div>
+            <div className="font-bold text-gray-800 dark:text-gray-200 text-lg">
+              {proj.title}
+            </div>
+            <div className="text-gray-700 dark:text-gray-300">
+              {proj.description}
+            </div>
             {proj.link && (
               <div className="flex">
                 <a
                   href={proj.link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="block flex text-gray-700 items-center hover:text-primary-700 transition-color duration-200 mt-1"
+                  className="block flex text-gray-700 dark:text-gray-300 items-center hover:text-primary-700 transition-color duration-200 mt-1"
                 >
                   <span className="mr-2">{proj.link.title}</span>
                   <FontAwesomeIcon icon={faArrowRight} className="w-3" />
@@ -35,7 +38,7 @@ const ProjectsPage: NextPage = () => {
           </div>
         ))}
       </div>
-    </PageWrapper>
+    </div>
   );
 };
 

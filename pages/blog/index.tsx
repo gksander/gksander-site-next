@@ -1,12 +1,12 @@
 import * as React from "react";
 import { NextPage } from "next";
-import { PageWrapper } from "../../components/PageWrapper";
+import { PageHeader } from "../../components/PageHeader";
 
 const BlogPage: NextPage = () => {
   return (
-    <PageWrapper>
-      <div>Blog</div>
-    </PageWrapper>
+    <div>
+      <PageHeader title="Blog" subtitle="Blog coming soon..." />
+    </div>
   );
 };
 

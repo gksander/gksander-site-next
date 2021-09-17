@@ -1,7 +1,7 @@
 import * as React from "react";
 import classNames from "classnames";
 import { Spacer } from "../components/Spacer";
-import { PageWrapper } from "../components/PageWrapper";
+import { PageHeader } from "../components/PageHeader";
 
 // Experience shape
 type IExperience = {
@@ -141,16 +141,16 @@ const SectionTitle: React.FC = ({ children }) => (
  */
 const Resume: React.FC = () => {
   return (
-    <PageWrapper>
-      <div className="font-fancy text-6xl font-thin text-primary-700 mb-1">
-        Resume
-      </div>
-      <div>A little bit about my professional past, present, and future.</div>
+    <div>
+      <PageHeader
+        title="Resume"
+        subtitle="A little bit about my professional past, present, and future."
+      />
       <Spacer size="sm" />
       {/* Experience */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         <SectionTitle>Experience</SectionTitle>
-        <div className="lg:col-span-2 grid gap-4">
+        <div className="md:col-span-2 grid gap-4">
           {experiences.map((exp, i) => (
             <DetailItem
               title={exp.company}
@@ -192,7 +192,7 @@ const Resume: React.FC = () => {
           ))}
         </div>
       </div>
-    </PageWrapper>
+    </div>
   );
 };
 
