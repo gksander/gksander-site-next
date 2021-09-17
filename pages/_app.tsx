@@ -5,6 +5,8 @@ import Link from "next/link";
 import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { MDXProvider } from "@mdx-js/react";
+import { MdxMap } from "../lib/mdxMap";
 
 const App: React.FC<AppProps> = ({ Component, pageProps, router }) => {
   return (
@@ -17,7 +19,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps, router }) => {
         />
       </Head>
       <AppBody>
-        <Component {...pageProps} key={router.route} />
+        <MDXProvider components={MdxMap}>
+          <Component {...pageProps} key={router.route} />
+        </MDXProvider>
       </AppBody>
     </React.Fragment>
   );

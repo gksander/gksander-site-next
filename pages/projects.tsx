@@ -9,8 +9,10 @@ import { PageHeader } from "../components/PageHeader";
 const ProjectsPage: NextPage = () => {
   return (
     <PageWrapper>
-      <PageHeader>Projects</PageHeader>
-      <div>A sample of some things I&lsquo;ve worked on.</div>
+      <PageHeader
+        title="Projects"
+        subtitle="A sample of some things I've worked on."
+      />
       <Spacer size="sm" />
       <div className="grid gap-6">
         {projects.map((proj) => (

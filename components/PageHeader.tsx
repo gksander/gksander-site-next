@@ -1,7 +1,15 @@
 import * as React from "react";
 
-type PageHeaderProps = {};
+type PageHeaderProps = {
+  title: string;
+  subtitle: string;
+};
 
-export const PageHeader: React.FC<PageHeaderProps> = ({ children }) => {
-  return <div className="font-bold text-2xl text-gray-900">{children}</div>;
+export const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle }) => {
+  return (
+    <div>
+      <div className="font-bold text-2xl text-gray-900">{title}</div>
+      <div className="text-gray-700">{subtitle}</div>
+    </div>
+  );
 };
