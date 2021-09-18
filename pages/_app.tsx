@@ -5,8 +5,6 @@ import Link from "next/link";
 import Head from "next/head";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { MDXProvider } from "@mdx-js/react";
-import { MdxMap } from "../lib/mdxMap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { PageWrapper } from "../components/PageWrapper";
@@ -23,13 +21,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps, router }) => {
           rel="stylesheet"
         />
       </Head>
-      <MDXProvider components={MdxMap}>
-        <AppBody>
-          <PageWrapper key={router.route}>
-            <Component {...pageProps} />
-          </PageWrapper>
-        </AppBody>
-      </MDXProvider>
+      <AppBody>
+        <PageWrapper key={router.route}>
+          <Component {...pageProps} />
+        </PageWrapper>
+      </AppBody>
     </React.Fragment>
   );
 };
@@ -69,7 +65,7 @@ const AppBody: React.FC = ({ children }) => {
           className="py-4 z-10 flex flex-col sm:flex-row sm:items-end sticky top-0 bg-white dark:bg-gray-700  border-b border-transparent transition transition-colors duration-300"
         >
           <div className="flex justify-center sm:-ml-20 bg-white dark:bg-gray-700">
-            <div className="w-16 h-16 mr-4 bg-gray-200 rounded-full overflow-hidden shadow border dark:border-gray-600">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 mr-4 bg-gray-200 rounded-full overflow-hidden shadow border dark:border-gray-600">
               <Image
                 src={require("../img/headshot-bw.png")}
                 alt="Headshot image"
@@ -79,7 +75,7 @@ const AppBody: React.FC = ({ children }) => {
           <div className="flex-grow">
             <div className="flex sm:justify-between items-center">
               <Link href="/" passHref>
-                <a className="font-bold text-2xl">Grant Sander</a>
+                <a className="font-bold text-xl sm:text-2xl">Grant Sander</a>
               </Link>
               <div className="flex text-gray-600 dark:text-gray-200 ml-3 sm:ml-0">
                 {SocialLinks.map(({ href, title, icon }) => (
@@ -128,8 +124,7 @@ const AppBody: React.FC = ({ children }) => {
 type HeaderLink = { title: string; href: string };
 const HeaderLinks: HeaderLink[] = [
   { title: "Projects", href: "/projects" },
-  { title: "Snippets", href: "/snippets" },
-  { title: "Blog", href: "/blog" },
+  { title: "Content", href: "/content" },
   { title: "Resume", href: "/resume" },
 ];
 

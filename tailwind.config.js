@@ -15,6 +15,7 @@ module.exports = {
   },
   variants: {
     margin: ["responsive", "last"],
+    filter: ["group-hover", "hover"],
   },
   plugins: [],
 };

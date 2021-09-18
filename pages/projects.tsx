@@ -10,7 +10,7 @@ const ProjectsPage: NextPage = () => {
     <div>
       <PageHeader
         title="Projects"
-        subtitle="A sample of some things I've worked on."
+        subtitle="A sample of some non-work projects I've worked on."
       />
       <Spacer size="sm" />
       <div className="grid gap-6">
@@ -66,14 +66,6 @@ const projects: Project[] = [
     link: {
       href: "https://github.com/gksander/gks-pokedex-next",
       title: "View the source and live site",
-    },
-  },
-  {
-    title: "ArtisanHD Configurator",
-    description: `This is a production app I built for Artisan Colour using full-stack JavaScript (Vue.js on the front, Node.js on the back). Custom product configurator and checkout flow with 2D and 3D product previews.`,
-    link: {
-      href: "https://secure.artisanhd.com",
-      title: "View the live site",
     },
   },
   {
