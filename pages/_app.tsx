@@ -37,22 +37,63 @@ const App: React.FC<AppProps> = ({ Component, pageProps, router }) => {
 const AppBody: React.FC = ({ children }) => {
   const router = useRouter();
   const activeRoute = router.route;
+  const headerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const listener = () => {
+      if (window.scrollY > 0) {
+        headerRef.current?.classList?.add?.(
+          "border-gray-200",
+          "dark:border-gray-800"
+        );
+      } else {
+        headerRef.current?.classList?.remove?.(
+          "border-gray-200",
+          "dark:border-gray-800"
+        );
+      }
+    };
+    window.addEventListener("scroll", listener);
+
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+  }, []);
 
   return (
-    <div className="dark:bg-gray-700 dark:text-white min-h-screen">
-      <div className="p-4 sm:px-24 container max-w-2xl">
+    <div className="bg-white dark:bg-gray-700 dark:text-white min-h-screen">
+      <div className="px-2 sm:px-24 container max-w-2xl">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:-mx-20">
-          <div className="w-16 h-16 mr-4 bg-gray-200 rounded-full overflow-hidden shadow border">
-            <Image
-              src={require("../img/headshot-bw.png")}
-              alt="Headshot image"
-            />
+        <header
+          ref={headerRef}
+          className="py-4 z-10 flex flex-col sm:flex-row sm:items-end sticky top-0 bg-white dark:bg-gray-700  border-b border-transparent transition transition-colors duration-300"
+        >
+          <div className="flex justify-center sm:-ml-20 bg-white dark:bg-gray-700">
+            <div className="w-16 h-16 mr-4 bg-gray-200 rounded-full overflow-hidden shadow border dark:border-gray-600">
+              <Image
+                src={require("../img/headshot-bw.png")}
+                alt="Headshot image"
+              />
+            </div>
           </div>
-          <div className="flex-grow sm:mr-20">
-            <Link href="/" passHref>
-              <a className="font-bold text-2xl">Grant Sander</a>
-            </Link>
+          <div className="flex-grow">
+            <div className="flex sm:justify-between items-center">
+              <Link href="/" passHref>
+                <a className="font-bold text-2xl">Grant Sander</a>
+              </Link>
+              <div className="flex text-gray-600 dark:text-gray-200 ml-3 sm:ml-0">
+                {SocialLinks.map(({ href, title, icon }) => (
+                  <a
+                    href={href}
+                    target="blank"
+                    key={title}
+                    className="flex mr-3 last:mr-0"
+                  >
+                    <FontAwesomeIcon icon={icon} className="w-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row justify-between w-full text-sm text-gray-600 dark:text-gray-200">
               <div className="flex-grow">
                 {HeaderLinks.map(({ title, href }) => (
@@ -70,21 +111,9 @@ const AppBody: React.FC = ({ children }) => {
                   </Link>
                 ))}
               </div>
-              <div className="flex">
-                {SocialLinks.map(({ href, title, icon }) => (
-                  <a
-                    href={href}
-                    target="blank"
-                    key={title}
-                    className="flex mr-3 last:mr-0"
-                  >
-                    <FontAwesomeIcon icon={icon} className="w-4" />
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
-        </div>
+        </header>
         {/* Body */}
         <div className="py-6">
           <AnimatePresence exitBeforeEnter initial={false}>

@@ -116,24 +116,32 @@ const DetailItem: React.FC<{
 }> = ({ title, subtitle, heading, description, isPrimary }) => (
   <div>
     <div
-      className="text-gray-700  text-sm"
+      className="text-gray-700 dark:text-gray-300 text-sm"
       dangerouslySetInnerHTML={{ __html: heading }}
     />
     <div
       className={classNames(
         "font-bold leading-5",
-        isPrimary ? "text-xl text-primary-700" : "text-lg"
+        isPrimary ? "text-xl text-primary-700 dark:text-primary-300" : "text-lg"
       )}
     >
       {title}
     </div>
-    <div className={classNames("font-bold mb-2 text-gray-700")}>{subtitle}</div>
-    <div className="text-gray-700 leading-snug text-sm">{description}</div>
+    <div
+      className={classNames("font-bold mb-2 text-gray-700 dark:text-gray-300")}
+    >
+      {subtitle}
+    </div>
+    <div className="text-gray-700 dark:text-gray-300 leading-snug text-sm">
+      {description}
+    </div>
   </div>
 );
 
 const SectionTitle: React.FC = ({ children }) => (
-  <div className="font-fancy text-3xl">{children}</div>
+  <div className="text-xl font-bold text-gray-800 dark:text-gray-200">
+    {children}
+  </div>
 );
 
 /**
@@ -187,7 +195,9 @@ const Resume: React.FC = () => {
           {toolItems.map((item) => (
             <div key={item.title}>
               <div className="font-bold">{item.title}</div>
-              <div className="text-gray-700">{item.description}</div>
+              <div className="text-gray-700 dark:text-gray-300">
+                {item.description}
+              </div>
             </div>
           ))}
         </div>
