@@ -42,7 +42,7 @@ const AppBody: React.FC = ({ children }) => {
   const activeRoute = router.route;
   const headerRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useViewportScroll();
-  const barWidth = useTransform(scrollYProgress, [0, 1], [0, WavePathLength]);
+  const barWidth = useTransform(scrollYProgress, [0, 1], [0, 951]);
 
   React.useEffect(() => {
     const listener = () => {
@@ -74,21 +74,27 @@ const AppBody: React.FC = ({ children }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
+          <mask id="waveMask">
+            <motion.rect
+              x="0"
+              y="0"
+              width={barWidth}
+              height="158"
+              fill="white"
+            />
+          </mask>
           <path
             d="M0 48.4852L31.7 46.2179C63.4 43.7795 126.8 39.5016 190.2 43.9078C253.6 48.4852 317 62.1746 380.4 73.5966C443.8 84.8475 507.2 94.259 570.6 91.8206C634 89.5533 697.4 75.8639 760.8 75.8639C824.2 75.8639 887.6 89.5533 919.3 96.3979L951 103.243V158H919.3C887.6 158 824.2 158 760.8 158C697.4 158 634 158 570.6 158C507.2 158 443.8 158 380.4 158C317 158 253.6 158 190.2 158C126.8 158 63.4 158 31.7 158H0V48.4852Z"
             className="fill-current"
-            fillOpacity={0.6}
+            fillOpacity={0.8}
+            mask="url(#waveMask)"
           />
-          <motion.path
-            d="M0 48.4852L31.7 46.2179C63.4 43.7795 126.8 39.5016 190.2 43.9078C253.6 48.4852 317 62.1746 380.4 73.5966C443.8 84.8475 507.2 94.259 570.6 91.8206C634 89.5533 697.4 75.8639 760.8 75.8639C824.2 75.8639 887.6 89.5533 919.3 96.3979L951 103.243"
-            strokeWidth={9}
-            className="stroke-current"
-            style={{ pathLength: scrollYProgress }}
-            strokeLinecap="round"
+          <path
+            d="M0 48.4852L31.7 46.2179C63.4 43.7795 126.8 39.5016 190.2 43.9078C253.6 48.4852 317 62.1746 380.4 73.5966C443.8 84.8475 507.2 94.259 570.6 91.8206C634 89.5533 697.4 75.8639 760.8 75.8639C824.2 75.8639 887.6 89.5533 919.3 96.3979L951 103.243V158H919.3C887.6 158 824.2 158 760.8 158C697.4 158 634 158 570.6 158C507.2 158 443.8 158 380.4 158C317 158 253.6 158 190.2 158C126.8 158 63.4 158 31.7 158H0V48.4852Z"
+            className="fill-current"
+            fillOpacity={0.4}
           />
         </svg>
-
-        {/*</svg>*/}
       </div>
       <div className="min-h-screen relative">
         <div className="px-2 sm:px-24 container max-w-2xl">
