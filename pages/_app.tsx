@@ -66,8 +66,8 @@ const AppBody: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-700 dark:text-white">
-      <div className="fixed -bottom-2 md:-bottom-6 lg:-bottom-10 inset-x-0 z-0 text-gray-100 dark:text-gray-800">
+    <React.Fragment>
+      <div className="fixed bottom-0 md:-bottom-6 lg:-bottom-10 inset-x-0 z-0 text-gray-100 dark:text-gray-800">
         <svg
           width="100%"
           viewBox="0 0 951 158"
@@ -103,10 +103,6 @@ const AppBody: React.FC = ({ children }) => {
             ref={headerRef}
             className="py-4 z-10 flex flex-col sm:flex-row sm:items-end sticky top-0 bg-white dark:bg-gray-700  border-b border-transparent transition transition-colors duration-300"
           >
-            {/*<motion.div*/}
-            {/*  className="absolute top-0 h-1 bg-gray-200 dark:bg-gray-800 w-full"*/}
-            {/*  style={{ width: barWidth }}*/}
-            {/*/>*/}
             <div className="flex justify-center sm:-ml-20 bg-white dark:bg-gray-700">
               <div className="w-12 h-12 sm:w-16 sm:h-16 mr-4 bg-gray-200 rounded-full overflow-hidden shadow border dark:border-gray-600">
                 <Image
@@ -164,7 +160,7 @@ const AppBody: React.FC = ({ children }) => {
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

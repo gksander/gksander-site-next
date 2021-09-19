@@ -37,7 +37,7 @@ const ProjectsPage: NextPage = () => {
                   href={proj.link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="block flex text-gray-700 dark:text-gray-300 items-center hover:text-primary-700 transition-color duration-200 mt-1"
+                  className="block flex text-gray-700 dark:text-gray-300 items-center hover:text-primary-700 dark:hover:text-primary-300 transition-color duration-200 mt-1"
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
