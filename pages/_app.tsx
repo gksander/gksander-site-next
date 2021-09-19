@@ -3,7 +3,12 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import Head from "next/head";
-import { AnimatePresence } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useTransform,
+  useViewportScroll,
+} from "framer-motion";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -36,6 +41,8 @@ const AppBody: React.FC = ({ children }) => {
   const router = useRouter();
   const activeRoute = router.route;
   const headerRef = React.useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useViewportScroll();
+  const barWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   React.useEffect(() => {
     const listener = () => {
@@ -66,6 +73,10 @@ const AppBody: React.FC = ({ children }) => {
           ref={headerRef}
           className="py-4 z-10 flex flex-col sm:flex-row sm:items-end sticky top-0 bg-white dark:bg-gray-700  border-b border-transparent transition transition-colors duration-300"
         >
+          <motion.div
+            className="absolute top-0 h-1 bg-gray-200 dark:bg-gray-800 w-full"
+            style={{ width: barWidth }}
+          />
           <div className="flex justify-center sm:-ml-20 bg-white dark:bg-gray-700">
             <div className="w-12 h-12 sm:w-16 sm:h-16 mr-4 bg-gray-200 rounded-full overflow-hidden shadow border dark:border-gray-600">
               <Image
