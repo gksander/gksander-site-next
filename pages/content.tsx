@@ -3,10 +3,18 @@ import { NextPage } from "next";
 import { Spacer } from "../components/Spacer";
 import { PageHeader } from "../components/PageHeader";
 import Image from "next/image";
+import Head from "next/head";
 
 const ContentPage: NextPage = () => {
   return (
-    <div>
+    <React.Fragment>
+      <Head>
+        <title>Grant Sander - Content</title>
+        <meta
+          name="description"
+          content="Some content created by Grant Sander."
+        />
+      </Head>
       <PageHeader
         title="Content"
         subtitle="Some content I've created over the years."
@@ -17,7 +25,7 @@ const ContentPage: NextPage = () => {
       {/*<SectionTitle>Conference Presentations</SectionTitle>*/}
       {/*<Spacer size="sm" />*/}
       <ContentListing title="Snippets" content={Snippets} hasPreview />
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -5,10 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { PageHeader } from "../components/PageHeader";
 import { motion, Variants } from "framer-motion";
+import Head from "next/head";
 
 const ProjectsPage: NextPage = () => {
   return (
-    <div>
+    <React.Fragment>
+      <Head>
+        <title>Grant Sander - Projects</title>
+        <meta
+          name="description"
+          content="Some of Grant Sander's side projects."
+        />
+      </Head>
       <PageHeader
         title="Projects"
         subtitle="A sample of some non-work projects I've worked on."
@@ -44,7 +52,7 @@ const ProjectsPage: NextPage = () => {
           </div>
         ))}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

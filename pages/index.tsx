@@ -1,8 +1,17 @@
+import * as React from "react";
 import type { NextPage } from "next";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <React.Fragment>
+      <Head>
+        <title>Grant Sander - About Me</title>
+        <meta
+          name="description"
+          content="About Grant Sander and his Software Expertise."
+        />
+      </Head>
       <div className="grid gap-6">
         {Sections.map((section) => (
           <div key={section.title}>
@@ -15,7 +24,7 @@ const Home: NextPage = () => {
           </div>
         ))}
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

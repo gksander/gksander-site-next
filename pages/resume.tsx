@@ -2,6 +2,7 @@ import * as React from "react";
 import classNames from "classnames";
 import { Spacer } from "../components/Spacer";
 import { PageHeader } from "../components/PageHeader";
+import Head from "next/head";
 
 // Experience shape
 type IExperience = {
@@ -149,7 +150,14 @@ const SectionTitle: React.FC = ({ children }) => (
  */
 const Resume: React.FC = () => {
   return (
-    <div>
+    <React.Fragment>
+      <Head>
+        <title>Grant Sander - Resume</title>
+        <meta
+          name="description"
+          content="Grant Sander's mostly up-to-date resume."
+        />
+      </Head>
       <PageHeader
         title="Resume"
         subtitle="A little bit about my professional past, present, and future."
@@ -202,7 +210,7 @@ const Resume: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -15,11 +15,13 @@ const App: React.FC<AppProps> = ({ Component, pageProps, router }) => {
   return (
     <React.Fragment>
       <Head>
+        <title>Grant Sander</title>
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Sansita+Swashed:wght@300;400&display=swap"
           rel="stylesheet"
         />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <AppBody>
         <PageWrapper key={router.route}>
@@ -86,6 +88,7 @@ const AppBody: React.FC = ({ children }) => {
                     target="blank"
                     key={title}
                     className="flex mr-3 last:mr-0 hover:text-primary-800 dark:hover:text-primary-200 transition transition-colors duration-150"
+                    aria-label={`Link to ${title} social account`}
                   >
                     <FontAwesomeIcon icon={icon} className="w-4" />
                   </a>
