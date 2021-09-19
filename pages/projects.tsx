@@ -4,6 +4,7 @@ import { Spacer } from "../components/Spacer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { PageHeader } from "../components/PageHeader";
+import { motion, Variants } from "framer-motion";
 
 const ProjectsPage: NextPage = () => {
   return (
@@ -24,15 +25,20 @@ const ProjectsPage: NextPage = () => {
             </div>
             {proj.link && (
               <div className="flex">
-                <a
+                <motion.a
                   href={proj.link.href}
                   target="_blank"
                   rel="noreferrer"
                   className="block flex text-gray-700 dark:text-gray-300 items-center hover:text-primary-700 transition-color duration-200 mt-1"
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
                 >
-                  <span className="mr-2">{proj.link.title}</span>
-                  <FontAwesomeIcon icon={faArrowRight} className="w-3" />
-                </a>
+                  <span className="mr-2">Check it out</span>
+                  <motion.span variants={ArrowVariants}>
+                    <FontAwesomeIcon icon={faArrowRight} className="w-3" />
+                  </motion.span>
+                </motion.a>
               </div>
             )}
           </div>
@@ -40,6 +46,15 @@ const ProjectsPage: NextPage = () => {
       </div>
     </div>
   );
+};
+
+const ArrowVariants: Variants = {
+  rest: {
+    x: 0,
+  },
+  hover: {
+    x: 5,
+  },
 };
 
 type Project = {

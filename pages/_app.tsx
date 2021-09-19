@@ -75,7 +75,9 @@ const AppBody: React.FC = ({ children }) => {
           <div className="flex-grow">
             <div className="flex sm:justify-between items-center">
               <Link href="/" passHref>
-                <a className="font-bold text-xl sm:text-2xl">Grant Sander</a>
+                <a className="font-bold text-xl sm:text-2xl hover:text-primary-800 dark:hover:text-primary-200 transition transition-colors duration-150">
+                  Grant Sander
+                </a>
               </Link>
               <div className="flex text-gray-600 dark:text-gray-200 ml-3 sm:ml-0">
                 {SocialLinks.map(({ href, title, icon }) => (
@@ -83,7 +85,7 @@ const AppBody: React.FC = ({ children }) => {
                     href={href}
                     target="blank"
                     key={title}
-                    className="flex mr-3 last:mr-0"
+                    className="flex mr-3 last:mr-0 hover:text-primary-800 dark:hover:text-primary-200 transition transition-colors duration-150"
                   >
                     <FontAwesomeIcon icon={icon} className="w-4" />
                   </a>
@@ -96,7 +98,7 @@ const AppBody: React.FC = ({ children }) => {
                   <Link href={href} passHref key={href}>
                     <a
                       className={classNames(
-                        "mr-2 uppercase transition transition-colors duration-150",
+                        "mr-2 sm:mr-3 uppercase transition transition-colors duration-150 hover:text-primary-800 dark:hover:text-primary-200",
                         activeRoute === href
                           ? "text-primary-800 dark:text-primary-200"
                           : ""

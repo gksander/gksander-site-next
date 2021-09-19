@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 const Sections: { title: string; description: string }[] = [
   {
     title: "I build software",
-    description: `I build full-stack web and mobile apps using primarily JavaScript and Python tooling. I have experience building web front-ends using React and Vue.js, mobile apps using React Native, and API backends using both Node.js and Ruby on Rails.`,
+    description: `I build full-stack web and mobile apps using primarily JavaScript and Python tooling. I have experience building web front-ends using React and Vue.js, mobile apps using React Native, and API backends using both Node.js and Ruby on Rails. I like tinkering with Python on the side.`,
   },
   {
     title: "I lead teams",

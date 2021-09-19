@@ -54,8 +54,8 @@ const ContentListing: React.FC<{
               </div>
             </div>
             {hasPreview && post.preview && (
-              <div className="w-12 sm:w-16 sm:ml-1 filter grayscale blur-sm group-hover:filter-none transition-all duration-300">
-                <Image src={post.preview} className="" />
+              <div className="w-12 sm:w-16 sm:ml-1 filter sm:grayscale sm:blur-sm group-hover:filter-none transition-all duration-300">
+                <Image src={post.preview} alt="Preview of this snippet" />
               </div>
             )}
           </a>
