@@ -20,6 +20,8 @@ const ContentPage: NextPage = () => {
         subtitle="Some content I've created over the years."
       />
       <Spacer size="sm" />
+      <ContentListing title="Conference Talks" content={ConfTalks} />
+      <Spacer size="sm" />
       <ContentListing title="Blog Posts" content={BlogPosts} />
       <Spacer size="sm" />
       {/*<SectionTitle>Conference Presentations</SectionTitle>*/}
@@ -79,6 +81,15 @@ type ContentPiece = {
   href: string;
   preview?: string;
 };
+
+const ConfTalks: ContentPiece[] = [
+  {
+    title: "Modern Animating in React Native",
+    description:
+      "An introduction to React Native Reanimated V2. Presented at React Native EU 20201.",
+    href: "https://youtu.be/Q_18-Y4RyNw?t=7054",
+  },
+];
 
 const BlogPosts: ContentPiece[] = [
   {
