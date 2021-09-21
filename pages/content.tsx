@@ -141,6 +141,13 @@ const Snippets: ContentPiece[] = [
     href: "https://codesandbox.io/s/loading-clock-iotgj",
     preview: require("../img/loading-clock.gif"),
   },
+  {
+    title: "Hover Elevate Hook using Web Animations API",
+    description:
+      "Uses Web Animations API to create React hook to elevate element when hovered.",
+    href: "https://codesandbox.io/s/use-hover-elevate-kjj1v?file=/src/App.tsx",
+    preview: require("../img/web-animation-hover.gif"),
+  },
 ];
 
 export default ContentPage;
