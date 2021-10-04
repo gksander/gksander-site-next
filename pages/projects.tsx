@@ -93,10 +93,18 @@ const projects: Project[] = [
   },
   {
     title: "React Dynamic Geometry",
-    description: `A React library for creating dynamic geometry boards. This was a "could I do that?" project, and was more for fun than for real-world use. Uses React, TypeScript, Jotai, and _MATH_.`,
+    description: `A React library for creating dynamic geometry boards. This was a "could I do that?" project, and was more for fun than for real-world use. Uses React, TypeScript, Jotai, and MATH.`,
     link: {
       href: "https://github.com/gksander/react-dynamic-geometry",
       title: "View the source with some examples",
+    },
+  },
+  {
+    title: "CIE Color Converter",
+    description: `A dependency-free JS library to convert between 7 different color spaces. Lots of fun matrix maths.`,
+    link: {
+      href: "https://github.com/gksander/CIE-ColorConverter",
+      title: "View the source",
     },
   },
   {
