@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="overflow-y-scroll">
         <Head />
         <body className="bg-white dark:bg-gray-700 dark:text-white">
           <Main />

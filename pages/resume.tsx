@@ -14,10 +14,16 @@ type IExperience = {
 
 const experiences: IExperience[] = [
   {
+    title: "Sr. Software Engineer (Frontend)",
+    company: "Coinbase",
+    description: `Helping build the future of finance one UI at a time.`,
+    time: `Nov. 2021 &ndash; Current`,
+  },
+  {
     title: "Sr. Software Engineer",
     company: "Formidable Labs",
     description: `Software consultant, building software and helping others build software better. Focus on front-end web and native mobile using primarily JS tooling.`,
-    time: `Mar. 2021 &ndash; Current`,
+    time: `Mar. 2021 &ndash; Nov. 2021`,
   },
   {
     title: "Sr. Software Engineer",
