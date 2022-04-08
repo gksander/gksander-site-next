@@ -29,7 +29,7 @@ const experiences: IExperience[] = [
     title: "Sr. Software Engineer",
     company: "Synapse Studios",
     description: `Full-stack web and mobile. TypeScript, React, React Native, and Node.js.`,
-    time: `Jan. 2020 &ndash; Current`,
+    time: `Jan. 2020 &ndash; Mar. 2021`,
   },
   {
     title: "Sr. Software Engineer",
